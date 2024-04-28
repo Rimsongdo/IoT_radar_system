@@ -1,0 +1,285 @@
+*{
+    padding:0;
+    box-sizing: border-box;
+    margin:0;
+}
+
+.main{
+    background-image: linear-gradient(to right, #8ED6FF, #9AFF9A, #D3B0E0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+    height: 100vh;
+}
+
+.mainA{
+    
+    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+    height: 100vh;
+}
+#i1{
+    width:100%;
+    height: 100%;
+
+}
+.a1{
+    display: flex;
+}
+.im{
+    
+        margin-left:3% ;
+        border:70px solid;
+        width: 30%;
+        border-radius: 270px;
+    
+    
+}
+
+.titre{
+    font-style: bold;
+    font-weight: 140px;
+    margin:10%;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.navbar ul li{
+   margin-right:10% ;
+    margin-left: 45%;
+    display: flex;
+    background-color: transparent;
+    justify-content: space-between;
+    padding-left: 3%;
+    list-style-type: none;
+    
+}
+
+.navbar ul li a{
+    margin-top:5%;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.Description{
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40%;
+    
+    
+    
+    
+}
+
+.row a {
+    text-decoration: none;
+    color:rgb(0, 255, 251)
+
+}
+footer{
+    background-color: rgb(59, 58, 58);
+    color:rgb(167, 163, 163);
+    height: 30vh;
+}
+.row{
+   
+    display:flex;
+    justify-content: space-around;
+}
+a:hover{
+    margin-left: 2%;
+}
+.footer-col{
+    margin-top: 5%;
+}
+.Description p{
+   
+    font-size: 22px;;
+    margin: 5%; 
+    padding: 2%;  
+    display: flex;
+    justify-content: center;
+}
+
+.ButtonContainer {
+   height: 20%;
+    
+}
+
+#toggleButton {
+    margin:3%;
+    margin-left:43%;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    box-shadow: 0px 6px 0px 0px rgb(156, 0, 0);
+    font-size: 20px;
+    color: white;
+    border: 3px solid rgb(250, 80, 80);
+    background-color: red; /* Couleur initiale */
+}
+
+#toggleButton.run {
+    background-color: rgb(0,200,0); /* Couleur lorsqu'il est activé (RUN) */
+   box-shadow: 0px 6px 0px 0px rgb(0, 156, 0);
+  border: 3px solid rgb(80, 250, 80);
+}
+
+button a {
+    text-decoration: none;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-color: rgb(250, 80, 80);
+}
+
+button:active {
+    transform: translateY(6px);
+    background-color: rgb(156, 0, 0);
+    box-shadow: none;
+    border: none;
+}
+
+
+
+#canvas-container {
+    border: 7px solid;
+    border-radius: 12px;
+    box-shadow:5px 5px 5px 5px rgb(46, 46, 48);
+    margin-left:15%;
+    margin-right: 15%;
+    width: 60%;
+    height: 70vh; /* Hauteur à 100% de la fenêtre du navigateur */
+  }
+  .form1 label,.form2 label{
+    color:black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 17px;
+       
+  }
+#cont{
+    background-color: red;
+} 
+
+
+@media only screen and (max-width: 800px) {
+    body{
+        width: 100%;
+    }
+
+    .navbar ul li{
+        padding-top:10px;
+        width: 100%;
+        margin-left: auto;
+        margin-right:5%;
+       
+    }
+    .Description p{
+        padding-top:10px;
+        margin:10%;
+    }
+    button{
+        width: 20%;
+        height: 100px;
+    }
+
+    
+#canvas-container {
+    border: 3px solid;
+    border-radius: 5px;
+    box-shadow:2px 2px 2px 2px rgb(46, 46, 48);
+   
+    height: 60vh; /* Hauteur à 100% de la fenêtre du navigateur */
+  }
+  .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+    
+
+
+ 
+}
+
+@media screen and (max-width: 500px)
+{
+    
+#canvas-container {
+    
+   
+    width: 100%;
+    margin: auto;
+    
+    height: 50vh; /* Hauteur à 100% de la fenêtre du navigateur */
+  }
+  .form{
+    display: flex;
+    flex-direction: column;
+  align-items: center;
+    
+  }
+  
+
+}
+
+@media screen and (min-width:801px){
+    .first{
+       
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap:0%;
+     }
+     .form1{
+        margin-top: 5%;
+        margin-left:5%;
+       
+     }
+     .form2{
+        margin-top:5%;
+        margin-right: 10%;
+     }
+     #canvas-container{
+        margin-top:2%;
+     }
+    
+
+    
+
+}
+
+@media only screen and (max-width: 800px) {
+    body{
+        width: 100%;
+    }
+
+    .navbar ul li{
+        padding-top:10px;
+        width: 100%;
+        margin-left: auto;
+        margin-right:5%;
+       
+    }
+    .Description p{
+        padding-top:10px;
+        margin:10%;
+    }
+    button{
+        width: 20%;
+        height: 100px;
+    }
+
+
+ 
+}
+

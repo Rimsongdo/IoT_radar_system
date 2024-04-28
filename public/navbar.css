@@ -1,0 +1,211 @@
+*{
+    padding:0;
+    box-sizing: border-box;
+    margin:0;
+}
+
+.main{
+    
+    /*background-image: linear-gradient(to right, #8ED6FF, #9AFF9A, #D3B0E0);*/
+   
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+    height: 100vh;
+}
+.Main{
+    
+    background-image: linear-gradient(to right, #8ED6FF, #9AFF9A, #D3B0E0);
+   
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+    height: 160vh;
+}
+
+
+.navbar ul li{
+    /*margin:5%;*/
+    margin-left: 45%;
+    display: flex;
+    background-color: transparent;
+    justify-content: space-between;
+    padding-left: 3%;
+    list-style-type: none;
+    
+}
+
+.navbar ul li a{
+    margin-top:5%;
+    text-decoration: none;
+    font-size: 15px;
+}
+.m1{
+    margin-top: 5%;
+    margin-left:6%;
+    display: flex;
+}
+.propos1,.propos2{
+    width:40%;
+    border:7px solid;
+    border-radius: 5px;
+    border-color: rgba(23, 6, 8, 0.927);
+    margin:5%;
+}
+.m2{
+    
+    margin-left:6%;
+    display: flex;
+}
+.m1 p,.m2 p{
+    padding:3%;
+}
+.propos3,.propos4{
+    width:40%;
+    border:7px solid;
+    margin:5%;
+    border-radius: 5px;
+    border-color: rgba(23, 6, 8, 0.927);
+}
+
+.m1 h1,.m2 h1{
+    position: center;
+    margin:5%;
+    margin-left: 20%;
+}
+
+.row a {
+    text-decoration: none;
+    color:rgb(0, 255, 251)
+
+}
+footer{
+    background-color: rgb(59, 58, 58);
+    color:rgb(167, 163, 163);
+    height: 30vh;
+}
+.row{
+   
+    display:flex;
+    justify-content: space-around;
+}
+a:hover{
+    margin-left: 2%;
+}
+.footer-col{
+    margin-top: 5%;
+}
+
+
+.Roger2{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+   
+    background-color: rgb(244, 244, 230);
+   
+   
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+}
+
+.contact{
+    
+    border: 1px solid #646174;
+    background-color: rgb(247, 182, 227);
+    box-shadow: 0px 0px 14px 0px rgba(87, 5, 5, 0.75);
+    width: 30%;
+    height: 62%;
+    border-radius: 10%;
+    margin:45%;
+    margin-left: 30%;;
+    margin-top: -10%;
+    padding: 5%;
+}
+
+.contact h2{
+    padding:4%;
+}
+
+#contact-form{
+    display:flex;
+    flex-direction: column;
+}
+
+#contact-form button{
+    border: solid 2px;
+    background-color: rgb(139, 105, 232);
+    box-shadow: 0px 0px 14px 0px rgba(4, 8, 1, 0.75);
+    color:rgb(22, 12, 12);
+    width: 25%;
+    height: 15%;
+    margin-left:35%;
+    border-radius: 5%;
+    
+    
+}
+
+#contact-form textarea{
+    height: 500px;
+    border: solid 2px;
+    border-radius: 10px;
+}
+
+#contact-form input{
+    height: 250px;
+    border: solid 2px;
+    border-radius: 10px;
+}
+.profils{
+    display: flex;
+    gap:10px;
+}
+
+.linkedin img{
+    width: 100px;
+    height: 50px;
+    padding: 50px;
+    
+}
+
+.github img{
+    width: 70px;
+    height: 50px;
+    padding: 50px;
+}
+
+
+.profil{
+    padding: 50px;
+    
+}
+
+.glob
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.personnal{
+    padding:50px;
+}
+
+.personnal img{
+    width: 50px;
+    height: 50px;
+}
+.number{
+    display: flex;
+    
+    padding:20px;
+}
+
+.whatsapp,.call{
+    padding:20px;
+}
+.contact form{
+    width: 100%;
+    height: 80%;
+}
+.prof{
+    padding-bottom: 5%;
+}

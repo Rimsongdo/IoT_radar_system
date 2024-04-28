@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Radar</title>
+    <link rel="stylesheet" href="radar.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    
+</head>
+<body>
+    <div class="main">
+        
+           <div class="navbar">
+            <ul>
+                <li>
+                    <a href="radar.html">HOME</a>
+                    <a href="about.html">ABOUT</a>
+                    <a href="contact.html">CONTACT US</a>
+                </li>
+            </ul>
+           </div>
+                
+        <div class="titre">
+            <h1>REAL-TIME RADAR DETECTION SYSTEM</h1>
+        </div>
+       
+       
+        <div class="a1">
+            <img class="im" src="radar1.jpg">
+            
+            <div class="Description">            
+                <p>Welcome to our real-time radar detection system! Experience the magic of our technology powered by an ESP8266 microcontroller, an ultrasonic sensor, and a servo motor. Our radar swiftly scans its surroundings, detecting objects instantly. See it all on our intuitive web interface, where hardware and software come together seamlessly. Control the scanning parameters and witness the integration of technology in action. Explore the live radar feed and marvel at the wonders of modern innovation! </p>
+            </div>
+           
+        </div>
+       
+        
+       
+    </div>
+    <div class="mainA">  
+        <div class="first">
+            <form class="form1">        
+                <div class="color-input" id="couleur">
+                    <label for="radar-color">Radar Color</label>
+                    <input type="color" id="radar-color" name="radar-color" value="#0000ff">
+                </div>
+            
+                <div class="color-input" id="spin-input">
+                    <label for="spin">Spin Color</label>
+                    <input type="color" id="spin" name="spin" value="#ff0000">
+                </div>
+                <div class="color-input" id="back">
+                    <label for="back-color">BackgroundColor</label>
+                    <input type="color" id="back-color" name="bac-color" value=#ffffff>
+                </div>
+            </form>
+        
+            <div id="canvas-container"></div>
+            <form class="form2">                   
+                <div class="slider-container" id="left-angle-slider">
+                    <label for="left-angle">Left Angle</label>
+                    <input type="range" id="left-angle" name="left-angle" min="120" max="180" value="180">
+                    <output class="value-output">0</output>
+                    <span>°</span>
+                </div>
+            
+                <div class="slider-container" id="right-angle-slider">
+                    <label for="right-angle">Right Angle</label>
+                    <input type="range" id="right-angle" name="right-angle" min="0" max="60" value="0">
+                    <output class="value-output">0</output>
+                    <span>°</span>
+                </div>
+            
+                <div class="slider-container" id="porte-max-slider">
+                    <label for="porte-max">Sweep(cm)</label>
+                    <input type="range" id="porte-max" name="porte-max" min="40" max="160" value="40">
+                    <output class="value-output">10</output>
+                </div> 
+            </form>  
+            
+        </div>
+        <div class="ButtonContainer">
+            <button id="toggleButton" class="run">RUN</button>
+        </div>
+       
+       
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="https://www.inpt.ac.ma">Institut National des Postes et Télécommunications</a></li>
+                        
+                        
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Visit Us</h4>
+                    <ul>
+                        <li><a href="https://www.google.com/maps/place/Institut+national+des+postes+et+t%C3%A9l%C3%A9communications/@33.9796884,-6.866705,15z/data=!4m6!3m5!1s0xda76cc334a66611:0xee9ee437a0cfbaea!8m2!3d33.9796884!4d-6.866705!16s%2Fg%2F123974vf?entry=ttu">Our Address</a></li>
+                        
+                        
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow us</h4>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/rimsongdo-roger-sawadogo-ab39b4286/">Linkedin</a></li>
+                        <li><a href="https://github.com/Rimsongdo/Rimsongdo">GitHub</a></li>
+                       
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="radar.js"></script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature en temps réel</title>
+</head>
+<body>
+    <h1>Temperature en temps réel</h1>
+    <div id="temperature"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        // Établir une connexion WebSocket avec le serveur
+        const socket = io();
+
+        // Écouter les messages de température envoyés par le serveur
+        socket.on('temperature', (temperature) => {
+            // Mettre à jour l'affichage avec la nouvelle température
+            document.getElementById('temperature').innerText = `Température actuelle : ${temperature} °C`;
+        });
+    </script>
+</body>
+</html>

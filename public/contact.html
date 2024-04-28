@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CONTACT</title>
+        <link rel="stylesheet" href="navbar.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="main">
+           
+               <div class="Roger2">
+                <div class="navbar">
+                    <ul>
+                        <li>
+                            <a href="radar.html">HOME</a>
+                        <a href="about.html">ABOUT</a>
+                        <a href="contact.html">CONTACT US</a>
+                        </li>
+                    </ul>
+                   </div>
+                <div class="glob">
+                    <div class="profil">
+    
+                        <div class="prof">
+                            <h2>Social Medias</h2>
+                        </div>
+                        
+                        <div class="profils">
+                            <div  class="linkedin">
+                                <a href="https://www.linkedin.com/in/rimsongdo-roger-sawadogo-ab39b4286/">
+                                   Linkedin
+                                </a>
+                
+                            </div>
+                            <div class="github">
+                                <a href="https://github.com/Rimsongdo">
+                                   GitHub
+                                </a>
+                            </div>
+                        </div>
+                       
+                        
+                    </div>
+                    <div class="personnal">
+                        <h2>Chat Numbers</h2>
+                        <div class="number">
+                            <div class="whatsapp">
+                                <img src="whatsapp logo.png" alt="whatsapp">
+                                <p>+22662955995    </p>
+                            </div>
+                            <div class="call">
+                                <img src="call_logo.jpg" alt="phone">
+                                <p>+212619933585</p>
+         
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact">
+                    <h2>Send us a message</h2>
+                    <form class="contact-form" id="contact-form">
+                        <label for="name">Name :</label>
+                        <input type="text" id="name" class="name" name="name"><br>
+                        <label for="email">Email :</label>
+                        <input type="email" id="email" name="email" class="email" required><br>
+                        <label for="message">Message :</label>
+                       
+                            <textarea id="message" name="message" class="text" required></textarea><br>
+                        
+                        
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="https://www.inpt.ac.ma">Institut National des Postes et Télécommunications</a></li>
+                            
+                            
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Visit Us</h4>
+                        <ul>
+                            <li><a href="https://www.google.com/maps/place/Institut+national+des+postes+et+t%C3%A9l%C3%A9communications/@33.9796884,-6.866705,15z/data=!4m6!3m5!1s0xda76cc334a66611:0xee9ee437a0cfbaea!8m2!3d33.9796884!4d-6.866705!16s%2Fg%2F123974vf?entry=ttu">Our Address</a></li>
+                            
+                            
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Follow us</h4>
+                        <ul>
+                            <li><a href="https://www.linkedin.com/in/rimsongdo-roger-sawadogo-ab39b4286/">Linkedin</a></li>
+                            <li><a href="https://github.com/Rimsongdo/Rimsongdo">GitHub</a></li>
+                           
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </footer>
+        <script src="https://smtpjs.com/v3/smtp.js">
+           
+        </script>
+        <script>
+            const form =document.querySelector('.contact-form');
+            function sendMsg(e){
+                e.preventDefault();
+                name=document.querySelector(".name");
+                email=document.querySelector(".email");
+                msg=document.querySelector(".text");
+                Email.send({
+                    SecureToken : " 0318ff85-217a-4d5d-b785-4db55c854cab",
+                    To : 'rogersawadogo12@gmail.com',
+                    From : email.value,
+                    Subject : "Contact Form",
+                    Body : msg.value
+                }).then(
+                  message => alert(message)
+                );
+            }
+            form.addEventListener('submit',sendMsg);
+            
+          
+        </script>
+    </body>
+</html>
