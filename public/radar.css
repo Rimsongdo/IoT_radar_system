@@ -5,7 +5,8 @@
 }
 
 .main{
-    background-image: linear-gradient(to right, #8ED6FF, #9AFF9A, #D3B0E0);
+    background: #ebebeb;
+    /*background-image: linear-gradient(to right, #8ED6FF, #9AFF9A, #D3B0E0);*/
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 100%;
     height: 100vh;

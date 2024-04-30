@@ -14,64 +14,71 @@
 }
 .Main{
     
-    background-image: linear-gradient(to right, #8ED6FF, #9AFF9A, #D3B0E0);
-   
+    /*background-image: linear-gradient(to right, #8ED6FF, #9AFF9A, #D3B0E0);*/
+    background: #ebebeb;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 100%;
-    height: 160vh;
+    height: 400vh;
 }
 
 
 .navbar ul li{
-    /*margin:5%;*/
-    margin-left: 45%;
-    display: flex;
-    background-color: transparent;
-    justify-content: space-between;
-    padding-left: 3%;
-    list-style-type: none;
+    margin-right:10% ;
+     margin-left: 45%;
+     display: flex;
+     background-color: transparent;
+     justify-content: space-between;
+     padding-left: 3%;
+     list-style-type: none;
+     
+ }
+ 
+ .navbar ul li a{
+     margin-top:5%;
+     text-decoration: none;
+     font-size: 15px;
+ }
+ 
+.m1{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+}
+.div{
+  
+    width:40%;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+height: 500px;
+
+
+background: linear-gradient(to right, #429b98, #b0eed4);
+color: white;
+margin: 100px 0;
+border-radius: 7px;
     
+    
+}
+.imm{
+    background-color: white;
+}
+.div img{
+    width:30%;
 }
 
-.navbar ul li a{
-    margin-top:5%;
-    text-decoration: none;
-    font-size: 15px;
-}
-.m1{
-    margin-top: 5%;
-    margin-left:6%;
-    display: flex;
-}
-.propos1,.propos2{
-    width:40%;
-    border:7px solid;
-    border-radius: 5px;
-    border-color: rgba(23, 6, 8, 0.927);
-    margin:5%;
-}
-.m2{
-    
-    margin-left:6%;
-    display: flex;
-}
-.m1 p,.m2 p{
+
+
+.m1 p{
     padding:3%;
 }
-.propos3,.propos4{
-    width:40%;
-    border:7px solid;
-    margin:5%;
-    border-radius: 5px;
-    border-color: rgba(23, 6, 8, 0.927);
-}
 
-.m1 h1,.m2 h1{
-    position: center;
-    margin:5%;
-    margin-left: 20%;
-}
 
+.m1 h1{
+    margin-left: 25%;
+    margin-top: 3%;
+}
 .row a {
     text-decoration: none;
     color:rgb(0, 255, 251)
@@ -110,8 +117,8 @@ a:hover{
 
 .contact{
     
-    border: 1px solid #646174;
-    background-color: rgb(247, 182, 227);
+    border: 1px solid #000000;
+    background-color: rgb(242, 213, 234);
     box-shadow: 0px 0px 14px 0px rgba(87, 5, 5, 0.75);
     width: 30%;
     height: 62%;
@@ -133,13 +140,14 @@ a:hover{
 
 #contact-form button{
     border: solid 2px;
-    background-color: rgb(139, 105, 232);
-    box-shadow: 0px 0px 14px 0px rgba(4, 8, 1, 0.75);
-    color:rgb(22, 12, 12);
-    width: 25%;
-    height: 15%;
+    background-color: rgb(193, 170, 255);
+    
+   
+    width: 30%;
+   
+   
     margin-left:35%;
-    border-radius: 5%;
+    border-radius: 10px;
     
     
 }
@@ -163,19 +171,22 @@ a:hover{
 .linkedin img{
     width: 100px;
     height: 50px;
-    padding: 50px;
-    
+
 }
 
 .github img{
     width: 70px;
     height: 50px;
+   
+}
+.profil{
     padding: 50px;
 }
 
-
-.profil{
-    padding: 50px;
+.profil1{
+    padding: 20px;
+    display: flex;
+    gap:20px;
     
 }
 

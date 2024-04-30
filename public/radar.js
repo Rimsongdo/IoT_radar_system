@@ -3,7 +3,7 @@ let servoAngle = 0; // Angle initial du servo moteur
 let distance = 0;
 let max=40;
 let porte = document.getElementById('porte-max');
-
+let buttonState ="RUN";
 
 let angle = 0;
 let pixsDistance;
@@ -99,6 +99,7 @@ socket.on('data', (data) => {
 porte.addEventListener('input',function(){
   max=porte.value;
 })
+/*
 document.getElementById("toggleButton").addEventListener("click", function() {
   if (this.classList.contains("start")) {
       this.textContent = "RUN";
@@ -112,7 +113,41 @@ document.getElementById("toggleButton").addEventListener("click", function() {
       this.classList.remove("run");
       this.classList.add("start");
   }
+});*/
+document.getElementById("toggleButton").addEventListener("click", function() {
+  
+  
+  // Envoie du texte du bouton au serveur
+  
+  
+  // Toggle de l'état du bouton
+  if (this.classList.contains("start")) {
+    this.textContent = "RUN";
+    this.classList.remove("start");
+    this.classList.add("run");
+    buttonState="RUN";
+  } else {
+    this.textContent = "STOP";
+    this.classList.remove("run");
+    this.classList.add("start");
+    buttonState="STOP";
+  }
+  sendButtonState(buttonState);
+  draw();
 });
+
+function sendButtonState(state) {
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "/buttonState", true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      console.log("Button state sent successfully.");
+    }
+  };
+  xhr.send(JSON.stringify({ state: state }));
+}
+
 
 function setup() {
     let canvas = createCanvas(containerWidth, containerHeight);
@@ -151,20 +186,31 @@ inputColor3.addEventListener('change', function() {
 
 
 function draw() {
- 
- fill(98,245,31);
- background(ri,gi,bi);
-  // simulating motion blur and slow fade of the moving line
-  noStroke();
-  fill(0,4); 
-  rect(0, 0, width, height-height*0.065); 
   
-  fill(98,245,31); // green color
-  // calls the functions for drawing the radar
-  drawRadar(); 
-  drawLine();
-  drawObject();
-  drawText();
+    fill(98,245,31);
+    background(ri,gi,bi);
+     // simulating motion blur and slow fade of the moving line
+     noStroke();
+     fill(0,4); 
+     rect(0, 0, width, height-height*0.065); 
+     
+     fill(98,245,31); // green color
+     // calls the functions for drawing the radar
+     drawRadar(); 
+     if(buttonState=="STOP")
+     {
+      drawLine();
+      drawObject();
+     }
+     
+     drawText();
+
+
+ 
+  
+  
+   
+
   
 }
 
@@ -202,10 +248,40 @@ function drawObject() {
   // limiting the range to 40 cms
   if(distance<max){
     // draws the object according to the angle and the distance
-  line(pixsDistance*cos(radians(servoAngle)),-pixsDistance*sin(radians(servoAngle)),(width-width*0.505)*cos(radians(servoAngle)),-(width-width*0.505)*sin(radians(servoAngle)));
+    fill(255, 0, 0); // Couleur rouge
+    ellipse(pixsDistance*cos(radians(servoAngle)), -pixsDistance*sin(radians(servoAngle)), 10, 10);
+  //line(pixsDistance*cos(radians(servoAngle)),-pixsDistance*sin(radians(servoAngle)),(width-width*0.505)*cos(radians(servoAngle)),-(width-width*0.505)*sin(radians(servoAngle)));
+  }
+  pop();
+}/*
+let objectDetected = false; // Variable pour indiquer si un objet est détecté
+let objectDetectedTimer = 0; // Timer pour effacer le point détecté après un certain délai
+
+function drawObject() {
+  push();
+  translate(width/2,height-height*0.074); // Déplace les coordonnées de départ à un nouvel emplacement
+  strokeWeight(1);
+  // Si un objet est détecté et le timer n'est pas écoulé, dessiner un point rouge
+  if (objectDetected && millis() - objectDetectedTimer < 3000) {
+    fill(255, 0, 0); // Couleur rouge
+    ellipse(pixsDistance*cos(radians(servoAngle)), -pixsDistance*sin(radians(servoAngle)), 10, 10); // Dessiner un point à la position de l'objet
+  } else {
+    // Si aucun objet n'est détecté ou le timer est écoulé, ne rien dessiner
   }
   pop();
 }
+
+// Dans la fonction draw(), mettez à jour objectDetected et objectDetectedTimer lorsque vous détectez un objet
+// Par exemple, dans la fonction qui reçoit les données du capteur, ajoutez ceci :
+if (distance < max) {
+  fill(255, 0, 0); // Couleur rouge
+  ellipse(pixsDistance*cos(radians(servoAngle)), -pixsDistance*sin(radians(servoAngle)), 10, 10);
+  objectDetected = true;
+  objectDetectedTimer = millis(); // Met à jour le timer pour le point détecté
+} else {
+  objectDetected = false;
+}*/
+
 
 function drawLine() {
   push();
@@ -214,8 +290,22 @@ function drawLine() {
   translate(width/2,height-height*0.074); // moves the starting coordinats to new location
   line(0,0,(height-height*0.12)*cos(radians(servoAngle)),-(height-height*0.12)*sin(radians(servoAngle))); // draws the line according to the angle
   pop();
+}/*
+function drawLine() {
+  push();
+  // Réduire l'opacité pour créer l'effet de traînée
+  stroke(ra, ga, ba);
+  strokeWeight(1);
+  translate(width/2,height-height*0.074); // déplace les coordonnées de départ à un nouvel emplacement
+  // Dessine la ligne selon l'angle
+  line(0,0,(height-height*0.12)*cos(radians(servoAngle)),-(height-height*0.12)*sin(radians(servoAngle))); 
+  // Réinitialisez l'arrière-plan pour effacer progressivement les traces précédentes
+  fill(ri, gi, bi, 10);
+  rectMode(CENTER);
+  rect(0, 0, width, height);
+  pop();
 }
-
+*/
 function drawText() { // draws the texts on the screen
   
   push();
