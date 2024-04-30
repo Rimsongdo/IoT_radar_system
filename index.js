@@ -7,7 +7,7 @@ const socketIo = require('socket.io');
 
 
 const app = express();
-const port = process.env.PORT||80;
+const port =80;
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 
