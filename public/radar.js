@@ -99,28 +99,9 @@ socket.on('data', (data) => {
 porte.addEventListener('input',function(){
   max=porte.value;
 })
-/*
-document.getElementById("toggleButton").addEventListener("click", function() {
-  if (this.classList.contains("start")) {
-      this.textContent = "RUN";
-     
-      this.classList.remove("start");
-      this.classList.add("run");
 
-  } else {
-      this.textContent = "STOP";
-      
-      this.classList.remove("run");
-      this.classList.add("start");
-  }
-});*/
 document.getElementById("toggleButton").addEventListener("click", function() {
   
-  
-  // Envoie du texte du bouton au serveur
-  
-  
-  // Toggle de l'état du bouton
   if (this.classList.contains("start")) {
     this.textContent = "RUN";
     this.classList.remove("start");
@@ -204,7 +185,7 @@ function draw() {
      }
      
      drawText();
-
+    
 
  
   
@@ -236,6 +217,7 @@ function drawRadar() {
   line(0,0,(-width/2)*cos(radians(120)),(-width/2)*sin(radians(120)));
   line(0,0,(-width/2)*cos(radians(150)),(-width/2)*sin(radians(150)));
   line((-width/2)*cos(radians(30)),0,width/2,0);
+  
   pop();
 }
 
@@ -246,68 +228,32 @@ function drawObject() {
   stroke(255,10,10); // red color
   pixsDistance = distance*((height-height*0.1666)*0.025); // covers the distance from the sensor from cm to pixels
   // limiting the range to 40 cms
-  if(distance<max){
+  if(distance<=(max-15)){
     // draws the object according to the angle and the distance
     fill(255, 0, 0); // Couleur rouge
     ellipse(pixsDistance*cos(radians(servoAngle)), -pixsDistance*sin(radians(servoAngle)), 10, 10);
   //line(pixsDistance*cos(radians(servoAngle)),-pixsDistance*sin(radians(servoAngle)),(width-width*0.505)*cos(radians(servoAngle)),-(width-width*0.505)*sin(radians(servoAngle)));
   }
   pop();
-}/*
-let objectDetected = false; // Variable pour indiquer si un objet est détecté
-let objectDetectedTimer = 0; // Timer pour effacer le point détecté après un certain délai
-
-function drawObject() {
-  push();
-  translate(width/2,height-height*0.074); // Déplace les coordonnées de départ à un nouvel emplacement
-  strokeWeight(1);
-  // Si un objet est détecté et le timer n'est pas écoulé, dessiner un point rouge
-  if (objectDetected && millis() - objectDetectedTimer < 3000) {
-    fill(255, 0, 0); // Couleur rouge
-    ellipse(pixsDistance*cos(radians(servoAngle)), -pixsDistance*sin(radians(servoAngle)), 10, 10); // Dessiner un point à la position de l'objet
-  } else {
-    // Si aucun objet n'est détecté ou le timer est écoulé, ne rien dessiner
-  }
-  pop();
 }
 
-// Dans la fonction draw(), mettez à jour objectDetected et objectDetectedTimer lorsque vous détectez un objet
-// Par exemple, dans la fonction qui reçoit les données du capteur, ajoutez ceci :
-if (distance < max) {
-  fill(255, 0, 0); // Couleur rouge
-  ellipse(pixsDistance*cos(radians(servoAngle)), -pixsDistance*sin(radians(servoAngle)), 10, 10);
-  objectDetected = true;
-  objectDetectedTimer = millis(); // Met à jour le timer pour le point détecté
-} else {
-  objectDetected = false;
-}*/
-
-
 function drawLine() {
+  push();
+  textSize(25);
+  fill(0); // Couleur du texte en blanc
+  textAlign(CENTER, TOP); // Alignement centré et en haut
+  text("Measured distance: " + distance + " cm",225  , 40); // Affichage du texte avec la valeur de distance
+  pop();
   push();
   strokeWeight(1);
   stroke(ra,ga,ba);
   translate(width/2,height-height*0.074); // moves the starting coordinats to new location
   line(0,0,(height-height*0.12)*cos(radians(servoAngle)),-(height-height*0.12)*sin(radians(servoAngle))); // draws the line according to the angle
   pop();
-}/*
-function drawLine() {
-  push();
-  // Réduire l'opacité pour créer l'effet de traînée
-  stroke(ra, ga, ba);
-  strokeWeight(1);
-  translate(width/2,height-height*0.074); // déplace les coordonnées de départ à un nouvel emplacement
-  // Dessine la ligne selon l'angle
-  line(0,0,(height-height*0.12)*cos(radians(servoAngle)),-(height-height*0.12)*sin(radians(servoAngle))); 
-  // Réinitialisez l'arrière-plan pour effacer progressivement les traces précédentes
-  fill(ri, gi, bi, 10);
-  rectMode(CENTER);
-  rect(0, 0, width, height);
-  pop();
 }
-*/
 function drawText() { // draws the texts on the screen
   
+ 
   push();
   fill(0,0,0);
   noStroke();
@@ -317,9 +263,9 @@ function drawText() { // draws the texts on the screen
  
   
   text((max-30)+"cm",width-width*0.3854,height-height*0.0833);
-  text((max-20)+"cm",width-width*0.281,height-height*0.0833);
-  text((max-10)+"cm",width-width*0.177,height-height*0.0833);
-  text((max)+"cm",width-width*0.0729,height-height*0.0833);
+  text((max-25)+"cm",width-width*0.281,height-height*0.0833);
+  text((max-20)+"cm",width-width*0.177,height-height*0.0833);
+  text((max-15)+"cm",width-width*0.0729,height-height*0.0833);
   textSize(20);
   textSize(15);
   fill(0,0,0);
@@ -342,6 +288,9 @@ function drawText() { // draws the texts on the screen
   translate((width-width*0.5104)+width/2*cos(radians(150)),(height-height*0.0574)-width/2*sin(radians(150)));
   rotate(radians(-60));
   text("150°",0,0);
+ 
+  
   pop(); 
 }
+
 

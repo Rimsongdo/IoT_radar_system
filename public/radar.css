@@ -48,23 +48,6 @@
 }
 
 
-.navbar ul li{
-   margin-right:10% ;
-    margin-left: 45%;
-    display: flex;
-    background-color: transparent;
-    justify-content: space-between;
-    padding-left: 3%;
-    list-style-type: none;
-    
-}
-
-.navbar ul li a{
-    margin-top:5%;
-    text-decoration: none;
-    font-size: 15px;
-}
-
 .Description{
     margin-top: 3%;
     display: flex;
