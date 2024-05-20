@@ -3,7 +3,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const http = require('http');
 const socketIo = require('socket.io');
-//const bodyParser = require('body-parser');
+
 
 
 const app = express();
@@ -23,13 +23,11 @@ const io = socketIo(server);
 app.post('/data', (req, res) => {
     const ango = req.body.angg;
     const disto = req.body.diss;
-    //console.log('Nouvelles données reçues - Angle:', ango, 'Distance:', disto);
-    // Envoyer les nouvelles données à tous les clients connectés via WebSocket
     io.emit('data', { angg: ango, diss: disto });
     res.sendStatus(200);
   });
 
-// Route GET pour la page HTML
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'radar.html'));
   
